@@ -37,7 +37,7 @@ class GoogleTranslationService: TranslationService {
     func translate(word: String) async throws -> Word {
         // 重新加载密钥（用户可能刚保存）
         self.apiKey = UserDefaults.standard.string(forKey: UserDefaultsKeys.googleAPIKey)
-        
+
         guard let apiKey = apiKey, !apiKey.isEmpty else {
             throw TranslationError.apiKeyMissing
         }

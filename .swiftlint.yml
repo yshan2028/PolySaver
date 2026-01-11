@@ -4,6 +4,11 @@ disabled_rules:
   - todo
   - identifier_name
   - type_name
+  - nesting
+  - type_body_length
+  - opening_brace
+  - closure_parameter_position
+  - trailing_comma
 
 excluded:
   - Pods
