@@ -1,0 +1,82 @@
+# .gitignore for macOS Screensaver (Swift/Xcode)
+
+# Xcode
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/xcshareddata/
+
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+# Build
+build/
+DerivedData/
+*.build/
+
+# Swift Package Manager
+.swiftpm/
+*.swiftpm/*.resolved
+Packages/
+Package.resolved
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Archives
+*.zip
+*.tar.gz
+
+# API Keys (NEVER COMMIT!)
+*.apikey
+secrets.plist
+APIKeys.swift
+
+# IDE
+.vscode/
+.idea/
+
+# Testing
+*.log
+test-results/
+coverage/
+
+# Temporary files
+*.swp
+*.swo
+*~
