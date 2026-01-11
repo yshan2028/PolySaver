@@ -31,15 +31,17 @@ jobs:
     - name: Build
       run: |
         xcodebuild build \
-          -scheme PolyglotSaver \
+          -scheme "learn english" \
           -destination 'platform=macOS' \
+          -derivedDataPath build \
           CODE_SIGNING_ALLOWED=NO
           
     - name: Run Tests
       run: |
         xcodebuild test \
-          -scheme PolyglotSaver \
+          -scheme "learn english" \
           -destination 'platform=macOS' \
+          -derivedDataPath build \
           CODE_SIGNING_ALLOWED=NO
           
     - name: Upload Build Artifacts
@@ -47,7 +49,7 @@ jobs:
       if: success()
       with:
         name: screensaver-build
-        path: build/Release/PolyglotSaver.saver
+        path: build/Build/Products/Release/learn english.saver
         
   lint:
     name: SwiftLint
