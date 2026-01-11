@@ -24,6 +24,7 @@
     <string>$(MACOSX_DEPLOYMENT_TARGET)</string>
     <key>NSHumanReadableCopyright</key>
     <string>Copyright © 2026 PolySaver Team. All rights reserved.</string>
-
+    <key>NSPrincipalClass</key>
+    <string>$(PRODUCT_MODULE_NAME).LearnEnglishView</string>
 </dict>
 </plist>

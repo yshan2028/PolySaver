@@ -9,7 +9,6 @@
 import AppKit
 import ScreenSaver
 
-@objc(LearnEnglishView)
 class LearnEnglishView: ScreenSaverView {
 
     // MARK: - Properties
