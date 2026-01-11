@@ -62,7 +62,7 @@ class LearnEnglishView: ScreenSaverView {
     // MARK: - UI Setup
 
     private func setupUI() {
-        guard let layer = layer else { return }
+        guard layer != nil else { return }
 
         // 1. 渐变背景
         setupGradientBackground()
@@ -306,7 +306,7 @@ class LearnEnglishView: ScreenSaverView {
             }
 
             // 更新进度
-            let (source, wordCount) = self.vocabularyManager.getCurrentSourceInfo()
+            let (source, _) = self.vocabularyManager.getCurrentSourceInfo()
             let stats = self.learningTracker.getStats()
             if let source = source {
                 self.progressLabel?.stringValue = "\(source.name) · 已学 \(stats.learnedWordsCount)"
