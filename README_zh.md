@@ -94,7 +94,7 @@ PolySaver/
 └── docs/                    # 文档
 ```
 
-详见 [架构设计文档](docs/zh/ARCHITECTURE.md)。
+详见 [架构设计文档](docs/ARCHITECTURE_zh.md)。
 
 ### API 集成
 
@@ -107,7 +107,7 @@ PolySaver 支持 **3个翻译服务提供商**，具备自动降级功能：
 | **谷歌翻译** | 仅付费 | 翻译质量高 |
 
 配置API：
-1. 获取API密钥（[教程](docs/zh/API_INTEGRATION.md)）
+1. 获取API密钥（[教程](docs/API_INTEGRATION_zh.md)）
 2. 打开屏幕保护程序选项
 3. 在API设置标签页输入凭据
 
@@ -124,10 +124,10 @@ PolySaver 支持 **3个翻译服务提供商**，具备自动降级功能：
 
 ## 📖 文档
 
-- [架构设计](docs/zh/ARCHITECTURE.md)
-- [API集成指南](docs/zh/API_INTEGRATION.md)
+- [架构设计](docs/ARCHITECTURE_zh.md)
+- [API集成指南](docs/API_INTEGRATION_zh.md)
 - [贡献指南](CONTRIBUTING.md)
-- [开发环境配置](docs/zh/DEVELOPMENT.md)
+- [开发环境配置](docs/DEVELOPMENT_zh.md)
 - [English Docs](docs/)
 
 ## 🤝 参与贡献
