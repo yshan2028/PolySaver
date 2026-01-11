@@ -94,7 +94,7 @@ PolySaver/
 └── docs/                    # 文档
 ```
 
-详见 [架构设计文档](docs/ARCHITECTURE_zh.md)。
+详见 [架构设计文档](docs/zh/ARCHITECTURE_zh.md)。
 
 ### API 集成
 
@@ -107,7 +107,7 @@ PolySaver 支持 **3个翻译服务提供商**，具备自动降级功能：
 | **谷歌翻译** | 仅付费 | 翻译质量高 |
 
 配置API：
-1. 获取API密钥（[教程](docs/API_INTEGRATION_zh.md)）
+1. 获取API密钥（[教程](docs/zh/API_INTEGRATION_zh.md)）
 2. 打开屏幕保护程序选项
 3. 在API设置标签页输入凭据
 
@@ -124,11 +124,11 @@ PolySaver 支持 **3个翻译服务提供商**，具备自动降级功能：
 
 ## 📖 文档
 
-- [架构设计](docs/ARCHITECTURE_zh.md)
-- [API集成指南](docs/API_INTEGRATION_zh.md)
+- [架构设计](docs/zh/ARCHITECTURE_zh.md)
+- [API集成指南](docs/zh/API_INTEGRATION_zh.md)
 - [贡献指南](CONTRIBUTING.md)
-- [开发环境配置](docs/DEVELOPMENT_zh.md)
-- [English Docs](docs/)
+- [开发环境配置](docs/zh/DEVELOPMENT_zh.md)
+- [English Docs](docs/en/)
 
 ## 🤝 参与贡献
 
@@ -153,11 +153,19 @@ PolySaver 支持 **3个翻译服务提供商**，具备自动降级功能：
 - 翻译API: Google Cloud Translation、有道智云、Microsoft Azure Translator
 - 设计灵感: macOS 内置的每日一词屏保
 
+## 👨‍💻 关于作者
+
+**Kimi** (yshan2028@gmail.com)
+
+我是一名拥有15年经验的测试开发工程师，目前居住在中国上海 🇨🇳。这是我开源的第一个 Apple 屏幕保护程序项目。
+
+**如果你觉得这个项目对你有帮助，请在 GitHub 上点个 ⭐️！** 你的支持是我持续改进项目的动力。
+
 ## 📬 联系方式
 
-- **问题反馈**: [GitHub Issues](https://github.com/yourname/PolySaver/issues)
-- **讨论区**: [GitHub Discussions](https://github.com/yourname/PolySaver/discussions)
-- **邮箱**: your.email@example.com
+- **问题反馈**: [GitHub Issues](https://github.com/yshan2028/PolySaver/issues)
+- **讨论区**: [GitHub Discussions](https://github.com/yshan2028/PolySaver/discussions)
+- **邮箱**: yshan2028@gmail.com
 
 ## ⭐ Star 历史
 

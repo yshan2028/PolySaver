@@ -94,7 +94,7 @@ PolySaver/
 └── docs/                    # Documentation
 ```
 
-See [ARCHITECTURE.md](docs/ARCHITECTURE.md) for detailed design.
+See [ARCHITECTURE.md](docs/en/ARCHITECTURE.md) for detailed design.
 
 ### API Integration
 
@@ -107,7 +107,7 @@ PolySaver supports **3 translation providers** with automatic fallback:
 | **Google** | Paid only | High quality |
 
 To configure APIs:
-1. Get your API keys ([guide](docs/API_INTEGRATION.md))
+1. Get your API keys ([guide](docs/en/API_INTEGRATION.md))
 2. Open Screen Saver Options
 3. Enter credentials in API Settings tab
 
@@ -124,10 +124,10 @@ To configure APIs:
 
 ## 📖 Documentation
 
-- [Architecture Design](docs/ARCHITECTURE.md)
-- [API Integration Guide](docs/API_INTEGRATION.md)
+- [Architecture Design](docs/en/ARCHITECTURE.md)
+- [API Integration Guide](docs/en/API_INTEGRATION.md)
 - [Contributing Guidelines](CONTRIBUTING.md)
-- [Development Setup](docs/DEVELOPMENT.md)
+- [Development Setup](docs/en/DEVELOPMENT.md)
 - [中文文档](docs/zh/)
 
 ## 🤝 Contributing
@@ -153,11 +153,19 @@ This project is licensed under the **MIT License** - see [LICENSE](LICENSE) for 
 - Translation APIs: Google Cloud Translation, Youdao AI, Microsoft Azure Translator
 - Inspired by macOS's built-in Word of the Day screensaver
 
+## 👨‍💻 About the Author
+
+**Kimi** (yshan2028@gmail.com)
+
+I am a Test Development Engineer with 15 years of experience, currently based in Shanghai, China 🇨🇳. This is my first open-source Apple screensaver project. 
+
+**If you find this project helpful, please give it a ⭐️ on GitHub!** Your support keeps me motivated to improve the project.
+
 ## 📬 Contact
 
-- **Issues**: [GitHub Issues](https://github.com/yourname/PolySaver/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourname/PolySaver/discussions)
-- **Email**: your.email@example.com
+- **Issues**: [GitHub Issues](https://github.com/yshan2028/PolySaver/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yshan2028/PolySaver/discussions)
+- **Email**: yshan2028@gmail.com
 
 ## ⭐ Star History
 

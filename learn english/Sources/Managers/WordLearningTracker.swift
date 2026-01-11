@@ -1,8 +1,9 @@
 //
 //  WordLearningTracker.swift
-//  learn english
+//  PolySaver
 //
-//  Created by AI Assistant on 1/12/26.
+//  Created by Kimi on 1/12/26.
+//  Copyright © 2026 Kimi (yshan2028@gmail.com). All rights reserved.
 //
 
 import Foundation
