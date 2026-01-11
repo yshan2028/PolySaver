@@ -18,12 +18,16 @@ private struct YoudaoResponse: Codable {
 
     struct BasicInfo: Codable {
         let phonetic: String?
-        let `us-phonetic`: String?
-        let `uk-phonetic`: String?
+        let usPhonetic: String?
+        let ukPhonetic: String?
         let explains: [String]?
 
-        var usPhonetic: String? { `us-phonetic` }
-        var ukPhonetic: String? { `uk-phonetic` }
+        enum CodingKeys: String, CodingKey {
+            case phonetic
+            case usPhonetic = "us-phonetic"
+            case ukPhonetic = "uk-phonetic"
+            case explains
+        }
     }
 
     struct WebTranslation: Codable {
@@ -50,9 +54,10 @@ class YoudaoTranslationService: TranslationService {
     func translate(word: String) async throws -> Word {
         // 重新加载密钥（用户可能刚保存）
         reloadCredentials()
-        
+
         guard let apiKey = apiKey, !apiKey.isEmpty,
-              let appSecret = appSecret, !appSecret.isEmpty else {
+            let appSecret = appSecret, !appSecret.isEmpty
+        else {
             throw TranslationError.apiKeyMissing
         }
 
@@ -88,11 +93,11 @@ class YoudaoTranslationService: TranslationService {
                 switch result.errorCode {
                 case "101": throw TranslationError.apiKeyMissing  // 缺少必填参数
                 case "102": throw TranslationError.apiKeyMissing  // 不支持的语言类型
-                case "103": throw TranslationError.wordNotFound   // 翻译文本过长
+                case "103": throw TranslationError.wordNotFound  // 翻译文本过长
                 case "108": throw TranslationError.apiKeyMissing  // 应用ID无效
                 case "110": throw TranslationError.quotaExceeded  // 无相关服务的有效实例
                 case "111": throw TranslationError.apiKeyMissing  // 开发者账号无效
-                case "113": throw TranslationError.wordNotFound   // 查询为空
+                case "113": throw TranslationError.wordNotFound  // 查询为空
                 case "202": throw TranslationError.apiKeyMissing  // 签名检验失败
                 case "401": throw TranslationError.quotaExceeded  // 账户已欠费
                 case "411": throw TranslationError.rateLimitExceeded  // 访问频率受限
@@ -149,13 +154,15 @@ class YoudaoTranslationService: TranslationService {
     }
 
     // MARK: - Private Methods
-    
+
     private func reloadCredentials() {
         self.apiKey = UserDefaults.standard.string(forKey: UserDefaultsKeys.youdaoAppKey)
         self.appSecret = UserDefaults.standard.string(forKey: UserDefaultsKeys.youdaoAppSecret)
     }
 
-    private func calculateSign(query: String, salt: String, curtime: String, appSecret: String) -> String {
+    private func calculateSign(query: String, salt: String, curtime: String, appSecret: String)
+        -> String
+    {
         // 有道API v3签名算法: sha256(appKey + truncate(q) + salt + curtime + appSecret)
         let signStr = "\(apiKey ?? "")\(truncate(query))\(salt)\(curtime)\(appSecret)"
         return signStr.sha256  // 使用 SHA256 而非 MD5

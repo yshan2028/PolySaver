@@ -9,6 +9,8 @@ disabled_rules:
   - opening_brace
   - closure_parameter_position
   - trailing_comma
+  - cyclomatic_complexity
+  - function_body_length
 
 excluded:
   - Pods

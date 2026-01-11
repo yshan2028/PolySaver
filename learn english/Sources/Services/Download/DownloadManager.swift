@@ -138,7 +138,7 @@ class DownloadManager: NSObject {
 
     private func download(from url: URL, identifier: String) async throws -> URL {
         return try await withCheckedThrowingContinuation { continuation in
-            let task = session.downloadTask(with: url) { [weak self] location, response, error in
+            let task = session.downloadTask(with: url) { [weak self] url, _, error in
                 self?.activeDownloads.removeValue(forKey: identifier)
                 self?.progressHandlers.removeValue(forKey: identifier)
 
@@ -181,18 +181,16 @@ extension DownloadManager: URLSessionDownloadDelegate {
         totalBytesExpectedToWrite: Int64
     ) {
         // 找到对应的identifier
-        for (identifier, task) in activeDownloads {
-            if task == downloadTask {
-                let progress = DownloadProgress(
-                    bytesDownloaded: totalBytesWritten,
-                    totalBytes: totalBytesExpectedToWrite
-                )
+        for (identifier, task) in activeDownloads where task == downloadTask {
+            let progress = DownloadProgress(
+                bytesDownloaded: totalBytesWritten,
+                totalBytes: totalBytesExpectedToWrite
+            )
 
-                DispatchQueue.main.async {
-                    self.progressHandlers[identifier]?(progress)
-                }
-                break
+            DispatchQueue.main.async {
+                self.progressHandlers[identifier]?(progress)
             }
+            break
         }
     }
 
