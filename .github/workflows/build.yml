@@ -32,14 +32,22 @@ jobs:
           ${{ runner.os }}-spm-
           
     - name: Build
-      run: xcodebuild build -scheme "learn english" -destination 'platform=macOS' -derivedDataPath build CODE_SIGNING_ALLOWED=NO
+      run: xcodebuild build -scheme "learn english" -destination 'platform=macOS' -configuration Release -derivedDataPath build CODE_SIGNING_ALLOWED=NO
+
+    - name: Create DMG
+      run: |
+        mkdir -p dist
+        cp -r "build/Build/Products/Release/learn english.saver" dist/
+        hdiutil create -volname "PolySaver" -srcfolder dist -ov -format UDZO "PolySaver.dmg"
           
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       if: success()
       with:
-        name: screensaver-build
-        path: build/Build/Products/Release/learn english.saver
+        name: PolySaver-macOS
+        path: |
+          PolySaver.dmg
+          build/Build/Products/Release/learn english.saver
         
   lint:
     name: SwiftLint
