@@ -8,8 +8,11 @@ on:
 
 jobs:
   build:
-    name: Build and Test
+    name: Build and Test (${{ matrix.xcode }})
     runs-on: macos-latest
+    strategy:
+      matrix:
+        xcode: ['26.1.1', '16.4.0']
     
     steps:
     - name: Checkout code
@@ -18,7 +21,7 @@ jobs:
     - name: Setup Xcode
       uses: maxim-lobanov/setup-xcode@v1
       with:
-        xcode-version: 'latest-stable'
+        xcode-version: ${{ matrix.xcode }}
         
     - name: Cache Swift Package Manager
       uses: actions/cache@v3
