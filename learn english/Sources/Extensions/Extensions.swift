@@ -7,7 +7,7 @@
 //
 
 import AppKit
-import CommonCrypto
+import CryptoKit
 import Foundation
 
 // MARK: - FileManager Extensions
@@ -111,25 +111,13 @@ extension UserDefaults {
 extension String {
     /// MD5 哈希（已废弃，仅用于兼容旧版）
     var md5: String {
-        let data = Data(self.utf8)
-        var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
-
-        data.withUnsafeBytes { buffer in
-            _ = CC_MD5(buffer.baseAddress, CC_LONG(buffer.count), &digest)
-        }
-
+        let digest = Insecure.MD5.hash(data: Data(self.utf8))
         return digest.map { String(format: "%02x", $0) }.joined()
     }
 
     /// SHA256 哈希（有道API v3 签名算法）
     var sha256: String {
-        let data = Data(self.utf8)
-        var digest = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
-
-        data.withUnsafeBytes { buffer in
-            _ = CC_SHA256(buffer.baseAddress, CC_LONG(buffer.count), &digest)
-        }
-
+        let digest = SHA256.hash(data: Data(self.utf8))
         return digest.map { String(format: "%02x", $0) }.joined()
     }
 }
